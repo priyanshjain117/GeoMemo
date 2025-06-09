@@ -22,7 +22,7 @@ Transform the way you discover and remember special places with **GeoMemo**—a 
 - 🗺️ **Interactive Mapping:** Beautiful map visualization with custom markers.
 - 💾 **Offline-First Design:** All data stored locally with SQLite for reliability.
 - 🔄 **Reactive Architecture:** Smooth state management with Riverpod.
-- 📊 **Smart Place Management:** Add, organize, search, and update places with rich details.
+- 📊 **Smart Place Management:** Add and organize places with rich details.
 - 🎨 **Modern User Experience:** Clean, intuitive interface with smooth animations and responsive layout.
 
 ---
@@ -35,31 +35,21 @@ Transform the way you discover and remember special places with **GeoMemo**—a 
 lib/
 ├── main.dart                        # Application entry point
 ├── helpers/                         # Utility & Configuration
-│   ├── api_credentials.dart         # API keys and credentials
-│   ├── database_helper.dart         # SQLite database operations
-│   ├── location_helper.dart         # Location services & geocoding
-│   └── constants.dart               # App-wide constants
+│   └── apikey.dart         # API keys and credentials
 ├── models/                          # Data Models
-│   ├── place.dart                   # Place data structure
-│   ├── location.dart                # Location coordinates model
-│   └── photo.dart                   # Photo metadata model
-├── providers/                       # State Management (Riverpod)
-│   ├── place_provider.dart          # Places state management
-│   ├── location_provider.dart       # Location state management
-│   ├── photo_provider.dart          # Photo management provider
-│   └── app_state_provider.dart      # Global app state
+│   └── place.dart                   # Place data structure
+├── providers/
+│   └── user_places.dart             # Places state management
 ├── screens/                         # UI Screens
 │   ├── home_screen.dart             # Main dashboard
 │   ├── add_place_screen.dart        # Add new place form
 │   ├── place_detail_screen.dart     # Place details view
-│   ├── map_screen.dart              # Interactive map interface
-│   └── settings_screen.dart         # App settings
+│   └── map_screen.dart              # Interactive map interface
 └── widgets/                         # Reusable UI Components
-    ├── place_item.dart              # Place list item widget
+    ├── fav_place_list_item.dart     # Place list item widget
     ├── image_input.dart             # Photo capture widget
     ├── location_input.dart          # Location picker widget
-    ├── custom_app_bar.dart          # Custom app bar
-    └── loading_indicator.dart       # Loading animations
+    └── empty_screen_info.dart       # Empty screen widget 
 ```
 
 ---
@@ -70,7 +60,7 @@ lib/
 
 - **Flutter SDK** (≥ 3.0.0)  
 - **IDE:** Android Studio, VS Code, or IntelliJ IDEA  
-- **Google Maps API Key**  
+- **opencagedata API Key**  
 - **Device:** Android Emulator, iOS Simulator, or Physical Device  
 - **Git**
 
@@ -89,16 +79,6 @@ flutter pub get
 
 # 4. Run the app
 flutter run
-```
-
-**API Configuration Example:**
-
-```
-// lib/helpers/api_credentials.dart
-class ApiCredentials {
-  static const String googleMapsApiKey = 'YOUR_GOOGLE_MAPS_API_KEY';
-  static const String geocodingApiKey = 'YOUR_GEOCODING_API_KEY';
-}
 ```
 
 **Android Permissions:**
@@ -129,7 +109,7 @@ GeoMemo needs location access to save precise coordinates
 | Dart        | Programming Lang  | ≥ 2.18.0 |
 | Riverpod    | State Management  | ^2.4.0   |
 | SQLite      | Local Database    | ^2.3.0   |
-| Google Maps | Mapping Services  | ^2.5.0   |
+| flutter_map | Mapping Services  | ^8.1.1   |
 
 ---
 
@@ -202,8 +182,3 @@ This project is licensed under the **MIT License**—see the [LICENSE](LICENSE) 
 *"Every place has a story. GeoMemo helps you remember yours."*  
 
 **Happy Place Tracking! 📍✨**
-
-
-```
-
-**Feel free to customize any part as needed!**
