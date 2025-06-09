@@ -35,7 +35,7 @@ Transform the way you discover and remember special places with **GeoMemo**—a 
 lib/
 ├── main.dart                        # Application entry point
 ├── helpers/                         # Utility & Configuration
-│   └── apikey.dart         # API keys and credentials
+│   └── apikey.dart                  # API keys and credentials
 ├── models/                          # Data Models
 │   └── place.dart                   # Place data structure
 ├── providers/
