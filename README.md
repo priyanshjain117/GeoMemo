@@ -134,8 +134,7 @@ This project is licensed under the **MIT License**—see the [LICENSE](LICENSE) 
 ## 🙏 Acknowledgments
 
 - **Flutter Team** for the cross-platform framework  
-- **Riverpod Community** for state management solutions  
-- **Google Maps Team** for mapping services  
+- **Riverpod Community** for state management solutions   
 - **OpenStreetMap** for open-source mapping data  
 - **Material Design** for design guidelines  
 - **SQLite Team** for reliable local database solutions  
